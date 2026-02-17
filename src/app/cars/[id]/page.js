@@ -315,7 +315,15 @@ const CarDetailsPage = () => {
 
         } catch (error) {
             console.error("Booking Error:", error);
-            toast.error(error.response?.data?.message || error.message);
+
+            // Extract specific error message from server response
+            const errorMessage =
+                error.response?.data?.message ||
+                error.response?.data?.error ||
+                error.message ||
+                "An unexpected error occurred during booking.";
+
+            toast.error(errorMessage);
         } finally {
             setProcessingPayment(false);
         }
