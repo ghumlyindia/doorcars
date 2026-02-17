@@ -15,6 +15,7 @@ export default function Home() {
       <BookingProcess />
       <Testimonials />
       <FAQ />
+      {/* testing */}
     </>
   );
 }
