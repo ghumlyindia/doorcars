@@ -16,6 +16,7 @@ const Hero = () => {
     const [startTime, setStartTime] = useState('');
     const [endDate, setEndDate] = useState('');
     const [endTime, setEndTime] = useState('');
+    const [minDate, setMinDate] = useState('');
 
     const [cities, setCities] = useState([]);
 
@@ -31,6 +32,7 @@ const Hero = () => {
             }
         };
         fetchCities();
+        setMinDate(new Date().toISOString().split('T')[0]);
     }, []);
 
     const filteredCities = cities.filter(c =>
@@ -390,7 +392,7 @@ const Hero = () => {
                                                     value={startDate}
                                                     onChange={(e) => setStartDate(e.target.value)}
                                                     className="w-full p-2 bg-gray-50 border-2 border-gray-200 rounded-lg focus:border-yellow-400 focus:bg-white outline-none transition-all text-xs lg:text-sm"
-                                                    min={new Date().toISOString().split('T')[0]}
+                                                    min={minDate}
                                                 />
                                                 <input
                                                     type="time"
@@ -413,7 +415,7 @@ const Hero = () => {
                                                     value={endDate}
                                                     onChange={(e) => setEndDate(e.target.value)}
                                                     className="w-full p-2 bg-gray-50 border-2 border-gray-200 rounded-lg focus:border-yellow-400 focus:bg-white outline-none transition-all text-xs lg:text-sm"
-                                                    min={startDate || new Date().toISOString().split('T')[0]}
+                                                    min={startDate || minDate}
                                                 />
                                                 <input
                                                     type="time"
@@ -563,7 +565,6 @@ const Hero = () => {
                         opacity: 1;
                         transform: translateX(0);
                     }
-                }
                 }
             `}</style>
         </>

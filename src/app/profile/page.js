@@ -5,7 +5,7 @@ import api from '@/utils/api';
 import toast, { Toaster } from 'react-hot-toast';
 import {
     User, Mail, Phone, Shield, ShieldCheck, Upload, FileText,
-    CheckCircle, AlertCircle, Edit, X, MapPin, Calendar,
+    CheckCircle, AlertCircle, Edit, X, MapPin, Calendar, Clock,
     LogOut, Car, LayoutDashboard, ChevronRight, Camera
 } from 'lucide-react';
 
@@ -532,8 +532,8 @@ const ProfilePage = () => {
                                             key={f}
                                             onClick={() => setBookingFilter(f)}
                                             className={`px-3 py-1.5 rounded-full text-xs font-bold capitalize transition-all ${bookingFilter === f
-                                                    ? 'bg-black text-yellow-400 shadow-sm'
-                                                    : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
+                                                ? 'bg-black text-yellow-400 shadow-sm'
+                                                : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
                                                 }`}
                                         >
                                             {f}
