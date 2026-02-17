@@ -311,6 +311,14 @@ const CarDetailsPage = () => {
             };
 
             const paymentObject = new window.Razorpay(options);
+
+            // Handle Payment Failure
+            paymentObject.on('payment.failed', function (response) {
+                console.error("Payment Failed:", response.error);
+                toast.error(`Payment Failed: ${response.error.description}`);
+                // You can also log this specific failure to your backend if needed
+            });
+
             paymentObject.open();
 
         } catch (error) {
