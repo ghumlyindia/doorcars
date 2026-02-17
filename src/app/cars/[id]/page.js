@@ -324,7 +324,7 @@ const CarDetailsPage = () => {
     const getImageUrl = (path) => {
         if (!path) return '';
         if (path.startsWith('http')) return path;
-        return `https://doorcarbn-production.up.railway.app/${path.replace(/\\/g, '/')}`;
+        return `https://doorcarbn.onrender.com/${path.replace(/\\/g, '/')}`;
     };
 
     const handleQuickDuration = (days) => {
